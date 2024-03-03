@@ -1,26 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
+
+import { Header } from './components/ProfileScreens/Header/Header'
+import { UserProfile } from './components/ProfileScreens/UserProfile/UserProfile';
+import { SettingMenu } from './components/ProfileScreens/SettingsMenu/SettingsMenu';
+import { ButtonLogOut } from './components/ProfileScreens/ButtonLogOut/ButtonLogOut';
+import imageUser from './components/ProfileScreens/image/imageUser.jpg';
+
 import './App.css';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header headerText={'Profile'} />
+      <UserProfile imageUser={imageUser} name={'Jane Doe'} description={'This is a small bio description to let users express themselves'} />
+      <SettingMenu />
+      <ButtonLogOut text={'Logout'} isDisabled={false} />
     </div>
   );
 }
 
-export default App;
+export { App };
